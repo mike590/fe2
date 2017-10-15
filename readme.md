@@ -1,8 +1,18 @@
 Plan:
 
+display all shows in carousel
+then, either:
+  move it form top to bottom based on device size
+  OR
+  use react router to listen to clicks on carousel and trigger change in FocusedComponent and url
+AppComponent needs to get id from the url, and pass it to FocusedComponent.
+  - Id stored in state of AppComponent? Or find the show based on id, and store that in state?
+
+style focused component
+
 3-4 Components:
 
-ContainerComponent is top level, contains FocusedComponent and CarouselComponent
+AppComponent is top level, contains FocusedComponent and CarouselComponent
 FocusedComponent (presentation comp)
 CarouselComponent (presentation comp)
 ***MAYBE*** each show in the carousel is a SlotComponent

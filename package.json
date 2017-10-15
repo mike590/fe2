@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "build:dev": "webpack -d",
+    "watch": "webpack --progress --colors --watch",
     "start": "webpack-dev-server"
   },
   "author": "",
