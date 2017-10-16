@@ -21386,6 +21386,8 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(54);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21407,10 +21409,11 @@ var CarouselShowComponent = function (_React$Component) {
     key: 'render',
     value: function render() {
       var img_url = '/src/app' + this.props.show.product_image_url;
+      var linkTo = '/' + this.props.show.id;
       // let img_width =
       return _react2.default.createElement(
-        'article',
-        { className: 'carousel-show' },
+        _reactRouterDom.Link,
+        { to: linkTo, className: 'carousel-show' },
         _react2.default.createElement('img', { src: img_url, width: '200px' }),
         _react2.default.createElement(
           'h4',
@@ -25884,17 +25887,31 @@ var AppComponent = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (AppComponent.__proto__ || Object.getPrototypeOf(AppComponent)).call(this, props));
 
-    _this.state = { 'focusedShow': _this.findShowById() };
+    var showId = parseInt(props.match.params.id) || 1;
+    _this.state = { 'focusedShow': _this.findShowById(showId) };
     return _this;
   }
 
   _createClass(AppComponent, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.match.params.id !== this.props.match.params.id) {
+        this.setState(this.handleIdChange);
+      }
+    }
+  }, {
     key: 'findShowById',
-    value: function findShowById() {
-      var showId = parseInt(this.props.match.params.id) || 1;
-      return this.props.shows.filter(function (show) {
+    value: function findShowById(showId) {
+      var focusedShow = this.props.shows.filter(function (show) {
         return show.id === showId;
       })[0];
+      return focusedShow;
+    }
+  }, {
+    key: 'handleIdChange',
+    value: function handleIdChange(prevState, props) {
+      var showId = parseInt(props.match.params.id) || 1;
+      return { 'focusedShow': this.findShowById(showId) };
     }
 
     // needs to set current show id in state from url

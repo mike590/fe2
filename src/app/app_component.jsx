@@ -6,14 +6,26 @@ class AppComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {'focusedShow': this.findShowById()};
+    let showId = parseInt(props.match.params.id) || 1;
+    this.state = {'focusedShow': this.findShowById(showId)};
   }
 
-  findShowById() {
-    let showId = parseInt(this.props.match.params.id) || 1;
-    return this.props.shows.filter((show) => {
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.match.params.id !== this.props.match.params.id) {
+        this.setState(this.handleIdChange);
+    }
+  }
+
+  findShowById(showId) {
+    let focusedShow = this.props.shows.filter((show) => {
       return show.id === showId
-    })[0]
+    })[0];
+    return focusedShow
+  }
+
+  handleIdChange(prevState, props) {
+    let showId = parseInt(props.match.params.id) || 1;
+    return {'focusedShow': this.findShowById(showId)}
   }
 
   // needs to set current show id in state from url
