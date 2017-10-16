@@ -980,7 +980,7 @@ var _shows2 = _interopRequireDefault(_shows);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react2.default.createElement(
-  _reactRouterDom.HashRouter,
+  _reactRouterDom.BrowserRouter,
   null,
   _react2.default.createElement(_reactRouterDom.Route, { path: '/:id?', render: function render(props) {
       return _react2.default.createElement(_app_component2.default, _extends({}, props, { shows: _shows2.default }));
