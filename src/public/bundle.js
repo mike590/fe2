@@ -25799,7 +25799,7 @@ exports = module.exports = __webpack_require__(81)(undefined);
 
 
 // module
-exports.push([module.i, "#carousel-section {\n  position: fixed;\n  width: 100%;\n  left: 0;\n  overflow-x: auto; }\n\n@media only screen and (min-width: 320px) {\n  #carousel-section {\n    height: 40px;\n    bottom: 0;\n    border-top: 3px solid black; } }\n\n@media only screen and (min-width: 980px) {\n  #carousel-section {\n    height: 100px;\n    top: 0;\n    border-bottom: 3px solid black;\n    border-top: 0px; }\n  #focused-section {\n    margin-top: 100px; } }\n\n.carousel-show {\n  display: inline; }\n", ""]);
+exports.push([module.i, "#carousel-section {\n  position: fixed;\n  width: 100%;\n  left: 0;\n  overflow-x: auto;\n  white-space: nowrap; }\n\n.carousel-show {\n  display: inline-block;\n  margin-right: 20px; }\n\n@media only screen and (min-width: 320px) and (max-width: 980px) {\n  #carousel-section {\n    height: 40px;\n    bottom: 0;\n    border-top: 3px solid black; } }\n\n@media only screen and (min-width: 980px) {\n  #carousel-section {\n    height: 100px;\n    top: 0;\n    border-bottom: 3px solid black; }\n  #focused-section {\n    margin-top: 100px; } }\n", ""]);
 
 // exports
 
