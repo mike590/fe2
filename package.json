@@ -4,7 +4,7 @@
   "description": "Show selector with Carousel and Focused Section",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha --compilers js:babel-register --require ignore-styles --require ./test/helpers.js",
     "build:dev": "webpack -d",
     "watch": "webpack --progress --colors --watch",
     "start": "webpack-dev-server"
@@ -21,7 +21,13 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-enzyme": "^0.8.0",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.1.0",
+    "ignore-styles": "^5.0.1",
+    "mocha": "^4.0.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",

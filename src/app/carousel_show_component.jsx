@@ -6,7 +6,6 @@ class CarouselShowComponent extends React.Component {
   render() {
     let img_url = '/app' + this.props.show.product_image_url;
     let linkTo = '/' + this.props.show.id;
-    // let img_width =
     return (
       <Link to={linkTo} className='carousel-show'>
         <figure>

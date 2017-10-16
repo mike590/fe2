@@ -25736,7 +25736,6 @@ var FocusedComponent = function (_React$Component) {
     key: 'render',
     value: function render() {
       var img_url = '/app' + this.props.show.product_image_url;
-      // let img_width =
       return _react2.default.createElement(
         'section',
         { id: 'focused-section' },
@@ -26452,7 +26451,6 @@ var CarouselShowComponent = function (_React$Component) {
     value: function render() {
       var img_url = '/app' + this.props.show.product_image_url;
       var linkTo = '/' + this.props.show.id;
-      // let img_width =
       return _react2.default.createElement(
         _reactRouterDom.Link,
         { to: linkTo, className: 'carousel-show' },
