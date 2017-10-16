@@ -25,7 +25,9 @@ var config = {
     ]
   },
   devServer: {
-    contentBase: './src'
+    port: 8080,
+    contentBase: './src',
+    historyApiFallback: true
   }
 };
 
