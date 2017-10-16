@@ -1,9 +1,11 @@
 import React from 'react';
 
+require('./styles.scss') 
+
 class FocusedComponent extends React.Component {
 
   render() {
-    let img_url = '/src/app' + this.props.show.product_image_url;
+    let img_url = '/app' + this.props.show.product_image_url;
     // let img_width =
     return (
       <section id='focused-section'>

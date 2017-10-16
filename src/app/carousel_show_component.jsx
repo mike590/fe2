@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 class CarouselShowComponent extends React.Component {
 
   render() {
-    let img_url = '/src/app' + this.props.show.product_image_url;
+    let img_url = '/app' + this.props.show.product_image_url;
     let linkTo = '/' + this.props.show.id;
     // let img_width =
     return (

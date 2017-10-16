@@ -13,11 +13,19 @@ var config = {
   module: {
     loaders: [
       {
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         include: APP,
-        test: /\.jsx?/
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
+  },
+  devServer: {
+    contentBase: './src'
   }
 };
 
