@@ -1,32 +1,113 @@
-#carousel-section {
+nav {
   position: fixed;
   width: 100%;
   left: 0;
+  text-align: center;
   overflow-x: auto;
   white-space: nowrap;
 }
 
 .carousel-show {
   display: inline-block;
-  margin-right: 20px;
+  text-decoration: none;
+  color: inherit;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 980px) {
-  #carousel-section {
-    height: 40px;
-    bottom: 0;
-    border-top: 3px solid black;
-  }
+#focused-section {
+  text-align: center;
 }
 
-@media only screen and (min-width: 980px) {
-  #carousel-section {
+#focused-show-episodes {
+  color: 	#aaaaaa;
+  margin: 10px;
+}
+
+#focused-show-title {
+  font-weight: bold;
+}
+
+summary {
+  text-transform: uppercase;
+}
+
+// overriding default browser styling for semantic element
+figure {
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 979px) {
+  nav {
     height: 100px;
-    top: 0;
-    border-bottom: 3px solid black;
+    bottom: 0;
+    border-top: 3px solid #eaeaea;
   }
 
   #focused-section {
-    margin-top: 100px;
+    margin-top: 13%;
+    text-align: center;
+
+    #focused-show-title {
+      font-size: 20px;
+    }
+
+    #focused-show-episodes {
+      font-size: 10px;
+    }
+
   }
+
+  .carousel-show {
+    margin: 15px 10px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .carousel-id {
+      margin-top: 5px;
+    }
+
+  }
+
+}
+
+@media only screen and (min-width: 980px) {
+  nav {
+    height: 130px;
+    top: 0;
+    border-bottom: 3px solid #eaeaea;
+  }
+
+  #focused-section {
+    margin-top: 18%;
+    text-align: center;
+
+    #focused-show-title {
+      font-size: 20px;
+    }
+
+    #focused-show-episodes {
+      font-size: 10px;
+    }
+
+  }
+
+  .carousel-show {
+    margin: 20px 20px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .carousel-id {
+      margin-top: 10px;
+    }
+
+  }
+
 }

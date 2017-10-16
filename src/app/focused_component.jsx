@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('./styles.scss') 
+require('./styles.scss')
 
 class FocusedComponent extends React.Component {
 
@@ -10,8 +10,8 @@ class FocusedComponent extends React.Component {
     return (
       <section id='focused-section'>
         <img src={img_url} width="200px"/>
-        <h6>Episodes: {this.props.show.episodes}</h6>
-        <h4>{this.props.show.title}</h4>
+        <summary id="focused-show-episodes">{this.props.show.episodes} Episodes</summary>
+        <summary id="focused-show-title">{this.props.show.title}</summary>
       </section>
     );
   }

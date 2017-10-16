@@ -6,6 +6,8 @@ class AppComponent extends React.Component {
 
   constructor(props) {
     super(props);
+    // parseInt returns NaN for non-numbers, which evaluaes to falsey
+    // this serves as validation for non-numbers and empty ids
     let showId = parseInt(props.match.params.id) || 1;
     this.state = {'focusedShow': this.findShowById(showId)};
   }
@@ -34,10 +36,10 @@ class AppComponent extends React.Component {
 
   render () {
     return (
-      <main>
+      <article>
         <CarouselComponent shows={this.props.shows}/>
         <FocusedComponent show={this.state.focusedShow}/>
-      </main>
+      </article>
     );
   }
 };

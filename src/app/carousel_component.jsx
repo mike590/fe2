@@ -5,11 +5,11 @@ class CarouselComponent extends React.Component {
 
   render() {
     return (
-      <section id='carousel-section'>
+      <nav>
         {this.props.shows.map((show) => {
           return <CarouselShowComponent show={show} key={show.id}/>;
         })}
-      </section>
+      </nav>
     )
   }
 

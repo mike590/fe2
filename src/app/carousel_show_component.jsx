@@ -9,8 +9,10 @@ class CarouselShowComponent extends React.Component {
     // let img_width =
     return (
       <Link to={linkTo} className='carousel-show'>
-        <img src={img_url} width="200px"/>
-        <h4>{this.props.show.id}</h4>
+        <figure>
+          <img src={img_url} />
+        </figure>
+        <summary class='carousel-id'>{this.props.show.id}</summary>
       </Link>
     );
   }
